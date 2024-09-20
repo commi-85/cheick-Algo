@@ -1,0 +1,33 @@
+ALGORITHM algorithm_comptePhrase
+VAR
+ phrase : STRING;
+ mot : STRING;
+ caracter : CHAR;
+ num1,num2,num3:INTEGER;
+BEGIN
+    phrase := '';
+    num1 := 0;   
+    num2 := 1;   
+    num3 := 0;   
+    
+    REPEAT
+        Read(caracter);
+        num1 := num1 + 1;
+        phrase := phrase + caracter
+        IF(caracter = 'a' OR caracter = 'e' OR caracter = 'i' OR caracter = 'o' OR caracter = 'u' OR caracter = 'y' OR
+           caracter = 'A' OR caracter = 'E' OR caracter = 'I' OR caracter = 'O' OR caracter = 'U'OR caracter = 'u' OR caracter = 'Y')THEN
+            num3 := num3 + 1
+        END IF
+
+        
+        IF(caracter = ' ') THEN
+            num2 := num2 + 1
+        END IF
+    UNTIL (caracter = '.')
+   
+    Write(phrase)
+    Write(num1) //"Nombre de caractere ",
+    Write(num2) //"Nombre de mots : ",
+    Write(num3) //"Nombre de voyelles : ",
+
+END
